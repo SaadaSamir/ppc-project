@@ -181,8 +181,11 @@ generate_all_csp_and_save(FilenamePL) :-
     % Fermer le fichier
     close(Stream).
 
-% Boucle itérative pour insérer des matrices
-insert_matrices_loop(Mp, M, Compteur, n, MFinal) :-
+% Calculer la valeur de Compteur avant d'entrer dans la boucle
+insert_matrices_loop(Mp, M, n, MFinal) :-
+    % Calcul de Compteur
+    Compteur is n * (n + 1) // 2,
+    % Appel de la fonction itérative avec la nouvelle valeur de Compteur
     insert_matrices_loop_iter(Mp, M, Compteur, n, MFinal).
 
 % Version itérative de l'insertion des matrices
@@ -199,7 +202,6 @@ insert_matrices_loop_iter(Mp, M, Compteur, n, MFinal) :-
     Compteur1 is Compteur - 1,
     % Appel de la fonction avec les nouvelles valeurs, boucle itérative
     insert_matrices_loop_iter(MpUpdated, M1, Compteur1, n, MFinal).
-
 
 % Générer une matrice booléenne aléatoire 20x20
 generate_random_matrix(Mb) :-
