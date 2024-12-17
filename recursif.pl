@@ -227,3 +227,5 @@ place_matrix_in_mp(Mp, Mb, P, MFinal) :-
 % print_matrices_for_combination(40, 20).
 
 % Exemple d utilisation pour afficher les CSPs de taille 40 et densite 20 : print_csp_list_for_combination(40, 20).
+% Commande pour générer et afficher la matrice Mp : generate_initial_constraint_matrix(3, Mp), print_matrix(Mp).
+
