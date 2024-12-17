@@ -1,0 +1,24 @@
+Implémentation en Prolog, et comparaison sur des CSP générés aléatoirement, des algorithmes SRA  et FC :
+Procéder comme suit pour la génération aléatoire de CSP discrets P=(X,D,C) :
+- considérer les tailles (nombres de variables)  20 à 100 par pas de 20 (20, 40, 60, 80, 100)
+- domaine commun de cardinal 20
+- considérer les densités de 10 à 90 par pas de 10 (10, 20, 30, 40, 50, 60, 70, 80, 90)
+- pour chacune des 5 tailles
+- pour chacune des 9 densités:
+- générer 10 CSP
+- calculer les temps d'exécution et prendre la moyenne
+- tracer la courbe temps d'exécution = fonction de densité
+Pour un CSP P = (X,D,C) avec (X) = n et une densité d, le nombre de contraintes est |C| = m = d*n*
+(n+1)/200, puisque le nombre total de paires (i,j) avec 1 <= i
+< j <= n est n+(n-1)+...+1=n(n+1)/2 (moitié supérieure de la représentation matricielle, diagonale incluse). Ces m contraintes sont générés aléatoirement comme suit:
+- Initialiser la représentation matricielle Mp (matrice identité sur la diagonale, matrice universelle partout ailleurs) ==> Mp matrice n*n
+- compteur=n*(n+1)/2
+- pour i=1 à m faire
+
+générer aléatoirement une 20*20-matrice booléenne Mb
+- générer aléatoirement une position p dans l'ensemble {1,..,compteur)
+- placer Mb dans la moitié supérieure de Mp, à la position libre numéro p
+compteur compteur-1
+Remarque: contrairement à la remarque de certains étudiants hier en cours, la matrice Mb n'est pas forcément symétrique. Si par exemple Mb représente la contrainte Xi<Xj, avec D(Xi)=D(Xj)={1,..,20), elle sera comme suit:
+- des 0 sur la diagonale et sur la moitié inférieure
+- des 1 ailleurs (sur la moitié supérieure sans la diagonale)
