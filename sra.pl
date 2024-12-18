@@ -166,3 +166,6 @@ save_10_csp_to_file(FileName, Matrices) :-
     write(Stream, ').'),     % Fermer le terme avec )
     nl(Stream),              % Nouvelle ligne
     close(Stream).           % Fermer le fichier
+
+
+% exemple d'usage : generer_csp(20, 0.1, Matrice), sra_solve(Matrice, Solution).
